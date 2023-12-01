@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mito <mito@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/29 09:10:21 by mito              #+#    #+#             */
-/*   Updated: 2023/11/30 15:39:15 by mito             ###   ########.fr       */
+/*   Created: 2023/10/24 16:29:17 by mito              #+#    #+#             */
+/*   Updated: 2023/11/30 11:15:29 by mito             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "get_next_line.h"
 
-# include <unistd.h>
-# include <stdlib.h>
+size_t	ft_strlen(const char *str)
+{
+	size_t	i;
 
-#ifndef BUFFER_SIZE
-# define BUFFER_SIZE 5
-# endif
-
-char	*get_next_line(int fd);
-char	*ft_strjoin(char const *s1, char const *s2);
-
-#endif
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}

@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mito <mito@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/29 09:10:21 by mito              #+#    #+#             */
-/*   Updated: 2023/11/30 15:39:15 by mito             ###   ########.fr       */
+/*   Created: 2023/11/01 12:54:31 by mito              #+#    #+#             */
+/*   Updated: 2023/11/30 11:01:30 by mito             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "get_next_line.h"
 
-# include <unistd.h>
-# include <stdlib.h>
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	char	*res;
+	int		i;
+	int		j;
 
-#ifndef BUFFER_SIZE
-# define BUFFER_SIZE 5
-# endif
-
-char	*get_next_line(int fd);
-char	*ft_strjoin(char const *s1, char const *s2);
-
-#endif
+	res = NULL;
+	if (s1 && s2)
+	{
+		res = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+		i = 0;
+		j = 0;
+		if (!res)
+			return (NULL);
+		while (s1[i] != '\0')
+		{
+			res[i] = s1[i];
+			i++;
+		}
+		while (s2[j] != '\0')
+			res[i++] = s2[j++];
+		res[i] = '\0';
+	}
+	return (res);
+}
