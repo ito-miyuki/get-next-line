@@ -6,7 +6,7 @@
 /*   By: mito <mito@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 14:52:28 by mito              #+#    #+#             */
-/*   Updated: 2023/12/05 14:58:05 by mito             ###   ########.fr       */
+/*   Updated: 2023/12/09 16:56:07 by mito             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ char	*ft_strjoin(char *s1, char *s2)
 	if (s1 || s2) // chaanged AND to OR
 	{
 		res = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+		if (!res)
+			return (NULL);
 		i = 0;
 		j = 0;
 		if (!res)
@@ -68,8 +70,8 @@ char	*ft_strndup(char *s1, size_t n)
 	char	*copy;
 	size_t		i;
 
-	copy = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1));
 	i = 0;
+	copy = malloc(sizeof(char) * (n + 1));
 	if (!copy)
 		return (NULL);
 	while (s1[i] != '\0' && (i < n || n == 0))

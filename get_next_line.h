@@ -6,7 +6,7 @@
 /*   By: mito <mito@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 09:10:21 by mito              #+#    #+#             */
-/*   Updated: 2023/12/05 16:08:15 by mito             ###   ########.fr       */
+/*   Updated: 2023/12/09 16:52:39 by mito             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 
 #ifndef BUFFER_SIZE
-# define BUFFER_SIZE 2
+# define BUFFER_SIZE 4
 # endif
 
 typedef struct s_list
@@ -44,5 +44,7 @@ char	*ft_strndup(char *s1, size_t n);
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strchr(char *str, int c);
 char    *find_newline(char **buffer);
+char	*free_str(char **str);
+
 
 #endif
