@@ -6,7 +6,7 @@
 /*   By: mito <mito@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 14:52:28 by mito              #+#    #+#             */
-/*   Updated: 2023/12/09 16:56:07 by mito             ###   ########.fr       */
+/*   Updated: 2023/12/11 10:30:36 by mito             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ size_t	ft_strlen(char *str)
 		i++;
 	return (i);
 }
+
 char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*res;
@@ -51,7 +52,7 @@ char	*ft_strjoin(char *s1, char *s2)
 			res[i++] = s2[j++];
 		res[i] = '\0';
 	}
-    return (res);
+	return (res);
 }
 
 char	*ft_strchr(char *str, int c)
@@ -68,7 +69,7 @@ char	*ft_strchr(char *str, int c)
 char	*ft_strndup(char *s1, size_t n)
 {
 	char	*copy;
-	size_t		i;
+	size_t	i;
 
 	i = 0;
 	copy = malloc(sizeof(char) * (n + 1));
