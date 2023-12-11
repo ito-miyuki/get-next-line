@@ -1,17 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mito <mito@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/29 09:10:21 by mito              #+#    #+#             */
-/*   Updated: 2023/12/11 16:15:03 by mito             ###   ########.fr       */
+/*   Created: 2023/12/11 15:28:04 by mito              #+#    #+#             */
+/*   Updated: 2023/12/11 16:14:58 by mito             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
+
+# include <unistd.h>
+# include <stdlib.h>
+# include <fcntl.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 4
@@ -20,10 +24,6 @@
 # ifndef MAX_FD
 #  define MAX_FD 1024
 # endif
-
-# include <unistd.h>
-# include <stdlib.h>
-# include <fcntl.h>
 
 char	*get_next_line(int fd);
 char	*read_line(int fd, char *remainder);

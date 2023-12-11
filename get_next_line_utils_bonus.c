@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mito <mito@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 14:52:28 by mito              #+#    #+#             */
-/*   Updated: 2023/12/11 16:43:51 by mito             ###   ########.fr       */
+/*   Created: 2023/12/11 15:25:26 by mito              #+#    #+#             */
+/*   Updated: 2023/12/11 16:20:58 by mito             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 size_t	ft_strlen(char *str)
 {
@@ -29,7 +29,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	int		j;
 
 	res = NULL;
-	if (s1 || s2) // chaanged AND to OR
+	if (s1 && s2) // changed AND to OR
 	{
 		res = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 		if (!res)

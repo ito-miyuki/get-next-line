@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mito <mito@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/27 17:30:15 by mito              #+#    #+#             */
-/*   Updated: 2023/12/11 14:39:17 by mito             ###   ########.fr       */
+/*   Created: 2023/12/11 15:23:21 by mito              #+#    #+#             */
+/*   Updated: 2023/12/11 15:43:27 by mito             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*read_line(int fd, char *remainder)
 {
@@ -79,20 +79,20 @@ char	*find_newline(char **buffer)
 
 char	*get_next_line(int fd)
 {
-	static char	*remainder;
+	static char	*remainder[1024];
 
 	if (fd < 0 || fd > MAX_FD || BUFFER_SIZE <= 0)
 		return (NULL);
-	if (!remainder)
+	if (!remainder[fd])
 	{
-		remainder = ft_strndup("", 0);
-		if (!remainder)
+		remainder[fd] = ft_strndup("", 0);
+		if (!remainder[fd])
 			return (NULL);
 	}
-	remainder = read_line(fd, remainder);
-	if (!remainder || *remainder == '\0')
+	remainder[fd] = read_line(fd, remainder[fd]);
+	if (!remainder[fd] || *remainder[fd] == '\0')
 	{
-		return (free_str(&remainder));
+		return (free_str(&remainder[fd]));
 	}
-	return (find_newline(&remainder));
+	return (find_newline(&remainder[fd]));
 }
