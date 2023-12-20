@@ -6,13 +6,23 @@
 /*   By: mito <mito@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 17:30:15 by mito              #+#    #+#             */
-/*   Updated: 2023/12/11 14:39:17 by mito             ###   ########.fr       */
+/*   Updated: 2023/12/20 13:47:53 by mito             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*read_line(int fd, char *remainder)
+static char	*free_str(char **str)
+{
+	if (*str)
+	{
+		free(*str);
+		*str = NULL;
+	}
+	return (NULL);
+}
+
+static char	*read_line(int fd, char *remainder)
 {
 	int		chars_read;
 	char	buffer[BUFFER_SIZE + 1];
@@ -39,17 +49,7 @@ char	*read_line(int fd, char *remainder)
 	return (remainder);
 }
 
-char	*free_str(char **str)
-{
-	if (*str)
-	{
-		free(*str);
-		*str = NULL;
-	}
-	return (NULL);
-}
-
-char	*find_newline(char **buffer)
+static char	*find_newline(char **buffer)
 {
 	char		*newline;
 	char		*line;
