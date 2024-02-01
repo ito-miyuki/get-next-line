@@ -6,7 +6,7 @@
 /*   By: mito <mito@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 09:10:21 by mito              #+#    #+#             */
-/*   Updated: 2023/12/11 16:15:03 by mito             ###   ########.fr       */
+/*   Updated: 2023/12/20 13:47:35 by mito             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,8 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <fcntl.h>
 
 char	*get_next_line(int fd);
-char	*read_line(int fd, char *remainder);
-char	*find_newline(char **buffer);
-char	*free_str(char **str);
 size_t	ft_strlen(char *str);
 char	*ft_strndup(char *s1, size_t n);
 char	*ft_strjoin(char *s1, char *s2);
